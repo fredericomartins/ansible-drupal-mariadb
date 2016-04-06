@@ -6,11 +6,12 @@
     - init
     - httpd
     - php7
+    - drupal8
 
  - hosts: dbserver
    remote_user: root
    roles:
     - init
     - mariadb10
-    - php5
-    - phpmyadmin
+#   - php5
+#   - phpmyadmin

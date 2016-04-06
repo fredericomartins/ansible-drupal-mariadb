@@ -1,4 +1,4 @@
-# file: roles/php70/handlers/main.yml
+# file: roles/php5/handlers/main.yml
 ---
 
 - name: restart iptables

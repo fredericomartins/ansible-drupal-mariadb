@@ -1,4 +1,4 @@
-# file: roles/php70/tasks/install.yml
+# file: roles/php5/tasks/install.yml
 
 - name: upgrade all packages
   yum: name=* state=latest

@@ -1,0 +1,17 @@
+# file: roles/drupal8/tasks/install.yml
+
+- name: Download Drupal 8
+  get_url: url=https://ftp.drupal.org/files/projects/drupal-8.0.6.tar.gz dest=/tmp/drupal-8.0.6.tar.gz mode=0440
+
+- name: Extract archive
+  unarchive: src=/tmp/drupal-8.0.6.tar.gz dest=/var/www/ copy=no
+
+- name: Correct Drupal path
+  command: mv /var/www/drupal-8.0.6 /var/www/drupal
+
+- name: Owner permissions
+  file: path=/var/www/drupal state=directory owner=apache group=apache recurse=yes
+
+- name: SELinux Context
+  shell: restorecon /var/www/drupal
+

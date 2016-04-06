@@ -2,5 +2,5 @@
 ---
 
 # used in apache vhost configuration files
-doc_root: /var/www/html
+doc_root: /var/www/drupal
 hostname: vagrantbox
