@@ -1,9 +1,8 @@
-# file: roles/mysql/defaults/main.yml
 ---
 
- mysql_root_password: toor
+mysql_root_password: changeme
 
- mysql_users:
-      - name: root
-        pass: toor
-        priv: "*.*:ALL,GRANT"
+mysql_users:
+    - name: drupal
+      pass: changeme
+      priv: "*.*:ALL,GRANT"

@@ -1,4 +1,7 @@
-# file: roles/mysql/tasks/configure.yml
 
-- name: Add allow rule for 3306 to firewall
-  firewalld: zone=public port=3306/tcp permanent=true state=enabled
+# Only available in ansible 2.x
+#- name: configure trusted network
+#  firewalld: source={{ mynetwork }} state=enabled
+
+- name: Allow service mysql in firewall
+  firewalld: service=mysql permanent=true state=enabled immediate=yes

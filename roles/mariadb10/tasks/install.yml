@@ -1,13 +1,12 @@
-# file: roles/mysql/tasks/install.yml
 
 - name: Configure MariaDB 10 repo
   template: src=mariadb10.repo dest=/etc/yum.repos.d/mariadb10.repo owner=root group=root mode=0644
 
-- name: MySql packages are installed
+- name: MariaDB packages are installed
   yum: pkg={{ item }} enablerepo=mariadb state=present
   with_items:
     - MariaDB-server
     - MariaDB-client
 
-- name: Start the MySQL service
+- name: Start the MariaDB service
   service: name=mariadb state=started enabled=true
