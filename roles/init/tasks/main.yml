@@ -1,6 +1,9 @@
 # file: roles/init/tasks/main.yml
 ---
 
+- name: Set hostname
+  hostname: name={{ myhostname }}
+
 - name: Update Yum
   yum: name=* state=latest
 
