@@ -12,5 +12,5 @@
    roles:
     - init
     - mariadb10
-    - php5
-    - phpmyadmin
+#    - php5
+#    - phpmyadmin
