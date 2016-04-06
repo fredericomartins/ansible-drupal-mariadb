@@ -1,0 +1,8 @@
+# file: roles/php70/tasks/install.yml
+
+- name: upgrade all packages
+  yum: name=* state=latest
+
+- name: Install php
+  yum: pkg=php state=present
+

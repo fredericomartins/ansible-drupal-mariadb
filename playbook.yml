@@ -1,0 +1,16 @@
+# file: ansible/playbook.yml
+---
+ - hosts: webserver
+   remote_user: root
+   roles:
+    - init
+    - httpd
+    - php7
+
+ - hosts: dbserver
+   remote_user: root
+   roles:
+    - init
+    - mariadb10
+    - php5
+    - phpmyadmin

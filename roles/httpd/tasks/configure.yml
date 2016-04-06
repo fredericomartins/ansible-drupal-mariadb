@@ -1,0 +1,13 @@
+# file: roles/httpd/tasks/configure.yml
+
+- name: Change default apache vhost
+  template: src=default.tpl dest=/etc/httpd/conf.d/000-default.conf
+
+- name: Set global ServerName for apache config
+  lineinfile: dest=/etc/httpd/conf/httpd.conf line="ServerName localhost"
+
+- name: Restart httpd
+  service: name=httpd state=restarted
+
+- name: Ensure Apache running
+  service: name=httpd state=started enabled=yes
